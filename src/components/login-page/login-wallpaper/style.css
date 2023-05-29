@@ -1,0 +1,12 @@
+@import "../../../styles/variables.css";
+
+.container-login-wallpaper {
+  background-image: url("/ondes.jpg");
+  background-size: cover;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
+
+.text-logo {
+  color: var(--background-light);
+}
