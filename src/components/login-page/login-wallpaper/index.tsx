@@ -1,3 +1,5 @@
+import React from "react";
+
 export function LoginWallpaper() {
   return (
     <div className="bg-[url('/ondes.jpg')] bg-cover bg-no-repeat bg-initial bg-center">

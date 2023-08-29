@@ -1,8 +1,17 @@
-import { Button } from "../../../../../components/button/Button";
-import { Card } from "../../../../../components/card/Card";
-import { Input } from "../../../../../components/input/Input";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../button/Button";
+import { Card } from "../../card/Card";
+import { Input } from "../../input/Input";
+
+import React from "react";
 
 export function LoginPainel() {
+  const navigate = useNavigate();
+
+  function onLogin() {
+    navigate("/home");
+  }
+
   return (
     <div className="h-full w-full bg-bgl flex justify-center items-center">
       <Card size="md">
@@ -26,7 +35,7 @@ export function LoginPainel() {
               type="password"
               placeholder="Digite sua senha"
             />
-            <Button variant="primary" label="Entrar" />
+            <Button onClick={onLogin} variant="primary" label="Entrar" />
           </div>
         </div>
       </Card>

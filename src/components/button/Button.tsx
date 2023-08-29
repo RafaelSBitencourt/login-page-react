@@ -1,13 +1,17 @@
+import React from "react";
+
 interface ButtonProps {
   variant: "primary" | "outline" | "ghost";
   label: string;
+  onClick: () => void;
 }
 
-export function Button({ variant, label }: ButtonProps) {
+export function Button({ variant, label, onClick }: ButtonProps) {
   switch (variant) {
     case "primary":
       return (
         <button
+          onClick={onClick}
           className="
         bg-action 
         text-bgl
@@ -25,17 +29,19 @@ export function Button({ variant, label }: ButtonProps) {
     case "outline":
       return (
         <button
+          onClick={onClick}
           className="
          bg-bgl
          border
          rounded 
          border-action
-         text-bgd 
+         text-action 
          font-semibold
          px-9 
          py-3 
          drop-shadow-my
          hover:bg-actdark
+         hover:border-transparent         
          "
         >
           {label}
@@ -43,7 +49,10 @@ export function Button({ variant, label }: ButtonProps) {
       );
     default:
       return (
-        <button className="bg-actdark rounded px-9 py-3 drop-shadow-my">
+        <button
+          onClick={onClick}
+          className="bg-actdark rounded px-9 py-3 drop-shadow-my"
+        >
           {label}
         </button>
       );
