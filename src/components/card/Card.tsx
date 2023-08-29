@@ -13,7 +13,9 @@ export function Card({ children, size }: CardProps) {
       ? "h-4/6 w-3/6"
       : "h-full w-full";
   return (
-    <div className={`${sizeApplied} bg-white border  rounded border-action `}>
+    <div
+      className={`${sizeApplied} bg-white border-solid border border-action rounded-sm drop-shadow-my`}
+    >
       {children}
     </div>
   );

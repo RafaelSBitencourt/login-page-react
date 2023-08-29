@@ -9,7 +9,7 @@ export function Input({ id, label, placeholder, type }: InputProps) {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id}>{label}</label>
-      <div className="p-2  border-solid border-2 border-action rounded-sm  ">
+      <div className="p-2  border-solid border border-action rounded-sm hover:border-black">
         <input
           id={id}
           type={type}
