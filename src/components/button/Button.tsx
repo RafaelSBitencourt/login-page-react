@@ -1,12 +1,13 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface ButtonProps {
   variant: "primary" | "outline" | "ghost";
   label: string;
-  onClick: () => void;
+  children?: ReactNode;
+  onClick?: () => void;
 }
 
-export function Button({ variant, label, onClick }: ButtonProps) {
+export function Button({ variant, label, onClick, children }: ButtonProps) {
   switch (variant) {
     case "primary":
       return (
@@ -24,6 +25,7 @@ export function Button({ variant, label, onClick }: ButtonProps) {
         "
         >
           {label}
+          {children && children}
         </button>
       );
     case "outline":
@@ -45,6 +47,7 @@ export function Button({ variant, label, onClick }: ButtonProps) {
          "
         >
           {label}
+          {children && children}
         </button>
       );
     default:
@@ -54,6 +57,7 @@ export function Button({ variant, label, onClick }: ButtonProps) {
           className="bg-actdark rounded px-9 py-3 drop-shadow-my"
         >
           {label}
+          {children && children}
         </button>
       );
   }
