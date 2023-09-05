@@ -5,7 +5,11 @@ import { LoginPage } from "../pages/login";
 export const autheticated = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
+    element: <HomePage />,
+  },
+  {
+    path: "/login",
+    element: <HomePage />,
   },
   {
     path: "/home",

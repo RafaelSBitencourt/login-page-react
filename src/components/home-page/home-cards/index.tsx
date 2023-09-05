@@ -1,13 +1,12 @@
 import { Card } from "../../card/Card";
-import { useNavigate } from "react-router-dom";
-import React from "react";
 import Button from "../../button/Button";
+import { useAuth } from "../../../context/Auth/useAuth";
 
 export function HomeCards() {
-  const navigate = useNavigate();
+  const auth = useAuth();
 
   function onBack() {
-    navigate("/");
+    auth.logout();
   }
   return (
     <div className="bg-bgl flex flex-col justify-center items-center h-full w-full gap-4">

@@ -2,12 +2,14 @@ import { Api } from "../../services/api";
 import { IUser } from "./types";
 
 export function setUserLocalStorage(user: IUser) {
-  localStorage.setItem("auht", JSON.stringify(user));
+  localStorage.setItem("auth", JSON.stringify(user));
 }
 
 export function getUserLocalStorage() {
   const json = localStorage.getItem("auth") || null;
-  return json ? JSON.parse(json) : "";
+  if (json) {
+    return JSON.parse(json);
+  }
 }
 
 export async function LoginRequest(email: string, password: string) {

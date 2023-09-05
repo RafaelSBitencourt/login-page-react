@@ -1,15 +1,19 @@
-import { useNavigate } from "react-router-dom";
 import { Button } from "../../button/Button";
 import { Card } from "../../card/Card";
 import { Input } from "../../input/Input";
 
-import React from "react";
+import { useState } from "react";
+import { useAuth } from "../../../context/Auth/useAuth";
+import { useNavigate } from "react-router-dom";
 
 export function LoginPainel() {
-  const navigate = useNavigate();
+  const auth = useAuth();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  function onLogin() {
-    navigate("/home");
+  async function onLogin() {
+    const loginRequest = await auth.authenticate(email, password);
+    return loginRequest;
   }
 
   return (
@@ -24,16 +28,20 @@ export function LoginPainel() {
           </div>
           <div className="flex flex-col gap-4 w-full">
             <Input
+              value={email}
               id="emailInput"
               label="Login:"
               type="text"
               placeholder="Digite seu E-mail"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
+              value={password}
               id="passwordInput"
               label="Senha:"
               type="password"
               placeholder="Digite sua senha"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button onClick={onLogin} variant="primary" label="Entrar" />
           </div>
