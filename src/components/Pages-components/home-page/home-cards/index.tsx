@@ -1,6 +1,8 @@
-import { Card } from "../../card/Card";
-import Button from "../../button/Button";
-import { useAuth } from "../../../context/Auth/useAuth";
+import React from "react";
+
+import { useAuth } from "../../../../context/Auth/useAuth";
+import { Card } from "../../../Reusable-components/card/Card";
+import { Button } from "../../../Reusable-components/button/Button";
 
 export function HomeCards() {
   const auth = useAuth();

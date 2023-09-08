@@ -1,10 +1,10 @@
-import { Button } from "../../button/Button";
-import { Card } from "../../card/Card";
-import { Input } from "../../input/Input";
+import { Button } from "../../../Reusable-components/button/Button";
+import { Card } from "../../../Reusable-components/card/Card";
+import { Input } from "../../../Reusable-components/input/Input";
 
 import { useState } from "react";
-import { useAuth } from "../../../context/Auth/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../context/Auth/useAuth";
+import React from "react";
 
 export function LoginPainel() {
   const auth = useAuth();

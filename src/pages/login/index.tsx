@@ -1,5 +1,5 @@
-import { LoginPainel } from "../../components/login-page/login-painel";
-import { LoginWallpaper } from "../../components/login-page/login-wallpaper";
+import { LoginPainel } from "../../components/Pages-components/login-page/login-painel";
+import { LoginWallpaper } from "../../components/Pages-components//login-page/login-wallpaper";
 
 export function LoginPage() {
   return (

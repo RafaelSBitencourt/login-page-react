@@ -1,5 +1,4 @@
-import React from "react";
-import { HomeCards } from "../../components/home-page/home-cards";
+import { HomeCards } from "../../components/Pages-components//home-page/home-cards";
 
 export function HomePage() {
   return (
