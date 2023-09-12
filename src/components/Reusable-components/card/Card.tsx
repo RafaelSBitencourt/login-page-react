@@ -2,19 +2,22 @@ import { ReactNode } from "react";
 
 interface CardProps {
   size: "sm" | "md" | "lg";
+  absolute?: boolean;
   children: ReactNode;
 }
 
-export function Card({ children, size }: CardProps) {
+export function Card({ children, size, absolute }: CardProps) {
   const sizeApplied =
     size === "sm"
-      ? "h-40 w-20 "
+      ? "md:h-40 md:w-20 h-36 w-28"
       : size === "md"
-      ? "h-4/6 w-3/6"
+      ? "md:h-4/6 md:w-4/6 sm:w-28 sm:h-5/6"
       : "h-full w-full";
   return (
     <div
-      className={`${sizeApplied} bg-white border-solid border border-action rounded-sm drop-shadow-my`}
+      className={`${sizeApplied} ${
+        absolute && "absolute"
+      } bg-white border-solid border border-action rounded-sm drop-shadow-my`}
     >
       {children}
     </div>

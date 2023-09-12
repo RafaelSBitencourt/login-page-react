@@ -17,7 +17,7 @@ export function LoginPainel() {
   }
 
   return (
-    <div className="h-full w-full bg-bgl flex justify-center items-center">
+    <div className="h-full w-full bg-bgl flex justify-center items-start lg:items-center pt-10">
       <Card size="md">
         <div className="p-8 h-full w-full flex flex-col justify-around  items-center">
           <div className="flex flex-col justify-between  items-center gap-2">
