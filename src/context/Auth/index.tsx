@@ -19,9 +19,16 @@ export function AuthProvider({ children }: IAuthProvider) {
   }, []);
 
   async function authenticate(email: string, password: string) {
-    const response = await LoginRequest(email, password);
-    setUser({ token: response.token, email });
-    setUserLocalStorage({ token: response.token, email });
+    const response = await LoginRequest(email, password)
+      .then((res) => {
+        setUser({ token: res.token, email });
+        setUserLocalStorage({ token: res.token, email });
+        return "Success";
+      })
+      .catch((e) => {
+        throw e;
+      });
+    return response;
   }
 
   function logout() {

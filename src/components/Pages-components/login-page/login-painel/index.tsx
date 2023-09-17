@@ -10,14 +10,25 @@ export function LoginPainel() {
   const auth = useAuth();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [errorMensage, setErrorMensage] = useState<string>("");
 
   async function onLogin() {
-    const loginRequest = await auth.authenticate(email, password);
-    return loginRequest;
+    const response = await auth
+      .authenticate(email, password)
+      .catch((e) => setErrorMensage(e));
+    return response;
   }
 
   return (
-    <div className="h-full w-full bg-bgl flex justify-center items-start lg:items-center pt-10">
+    <div className="h-full w-full bg-bgl items-center flex sm:flex-col sm:gap-3 sm:justify-start lg:justify-center pt-10">
+      {errorMensage && (
+        <div className=" w-4/6 p-2 border-solid border border-rose-600 rounded bg-red-300">
+          Usuário ou senha incorretos , verifique no site:{" "}
+          <a className="text-actdark" target="_blank" href="http://reqres.in">
+            http://reqres.in
+          </a>
+        </div>
+      )}
       <Card size="md">
         <div className="p-8 h-full w-full flex flex-col justify-around  items-center">
           <div className="flex flex-col justify-between  items-center gap-2">
