@@ -4,7 +4,6 @@ import { Input } from "../../../Reusable-components/input/Input";
 
 import { useState } from "react";
 import { useAuth } from "../../../../context/Auth/useAuth";
-import React from "react";
 
 export function LoginPainel() {
   const auth = useAuth();

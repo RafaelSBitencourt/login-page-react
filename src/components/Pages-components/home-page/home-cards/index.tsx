@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useAuth } from "../../../../context/Auth/useAuth";
 import { Card } from "../../../Reusable-components/card/Card";
 import { Button } from "../../../Reusable-components/button/Button";
@@ -17,7 +15,7 @@ export function HomeCards() {
           <h1>Parábens você logou 😀</h1>
         </div>
       </Card>
-      <Button variant="outline" label="Voltar" onClick={onBack}></Button>
+      <Button variant="outline" label="Voltar" onClick={onBack} />
     </div>
   );
 }
